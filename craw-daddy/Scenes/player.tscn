@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://blxn7cvxp780s"]
+
+[ext_resource type="Script" uid="uid://dnb68pqks57el" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://cwdmertys6nvw" path="res://Sprites/Characters/charac1.png" id="1_v0iea"]
+[ext_resource type="Texture2D" uid="uid://ds6g1ke0mv4ge" path="res://Sprites/Characters/charac2.png" id="3_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lp5if"]
+size = Vector2(30, 15)
+
+[sub_resource type="Animation" id="Animation_vgqql"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_v0iea")]
+}
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+resource_name = "idle"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_v0iea")]
+}
+
+[sub_resource type="Animation" id="Animation_x3wgy"]
+resource_name = "move"
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_v0iea"), ExtResource("3_6t5aa")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3smsa"]
+_data = {
+&"RESET": SubResource("Animation_vgqql"),
+&"idle": SubResource("Animation_fkybt"),
+&"move": SubResource("Animation_x3wgy")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=507803602]
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=328614691]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_v0iea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1033057103]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lp5if")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=240099761]
+offset = Vector2(0, -5)
+zoom = Vector2(2, 2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=181068614]
+libraries/ = SubResource("AnimationLibrary_3smsa")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1780804194]

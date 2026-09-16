@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bl0h32xayjjwe"]
+
+[ext_resource type="Texture2D" uid="uid://c7jj7a0gfp35k" path="res://Sprites/background.jpeg" id="1_vk57k"]
+[ext_resource type="PackedScene" uid="uid://blxn7cvxp780s" path="res://Scenes/player.tscn" id="2_8ffim"]
+
+[node name="Main" type="Node2D" unique_id=297703182]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1398897550]
+position = Vector2(-3, -1)
+texture = ExtResource("1_vk57k")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2029587797]
+
+[node name="Player" parent="." unique_id=507803602 instance=ExtResource("2_8ffim")]
+position = Vector2(-148, 6)
