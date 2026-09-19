@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bgiml7xbfl4mt"]
+
+[ext_resource type="Script" uid="uid://11a7gyb4a3bk" path="res://Scripts/can.gd" id="1_03bqg"]
+[ext_resource type="Texture2D" uid="uid://ctkvrrr8dbkhu" path="res://Sprites/Characters/can.png" id="2_3g4kb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyy32"]
+size = Vector2(51, 31)
+
+[node name="Enemy_Can" type="Area2D" unique_id=1377686609]
+script = ExtResource("1_03bqg")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=823028229]
+position = Vector2(32, 141.00002)
+scale = Vector2(1, 0.953125)
+texture = ExtResource("2_3g4kb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1715003709]
+position = Vector2(31, 144)
+shape = SubResource("RectangleShape2D_qyy32")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -3,11 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://c7jj7a0gfp35k" path="res://Sprites/background.jpeg" id="1_vk57k"]
 [ext_resource type="PackedScene" uid="uid://blxn7cvxp780s" path="res://Scenes/player.tscn" id="2_8ffim"]
 [ext_resource type="TileSet" uid="uid://dp2wkhtnihe4m" path="res://Sprites/new_tile_set.tres" id="2_xfk5q"]
-[ext_resource type="Script" uid="uid://dyq6utn738nll" path="res://Scenes/world_boundary.gd" id="4_7p6j4"]
+[ext_resource type="Script" uid="uid://dyq6utn738nll" path="res://Scripts/world_boundary.gd" id="4_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://bgiml7xbfl4mt" path="res://Scenes/enemy_can.tscn" id="5_6444e"]
 
 [node name="Main" type="Node2D" unique_id=297703182]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1398897550]
+position = Vector2(-56, -32)
 scale = Vector2(1, 0.80533856)
 texture = ExtResource("1_vk57k")
 
@@ -35,3 +37,9 @@ position = Vector2(-280, 3)
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1106045267]
 script = ExtResource("4_7p6j4")
+
+[node name="Enemys" type="Node" parent="." unique_id=2033080886]
+
+[node name="Enemy_Can" parent="Enemys" unique_id=1377686609 instance=ExtResource("5_6444e")]
+
+[node name="Food" type="Node" parent="." unique_id=2029126564]

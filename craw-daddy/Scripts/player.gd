@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var move_speed : float = 100
 @export var game_current : float = 5000
+@export var health : int = 3
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
@@ -26,6 +27,13 @@ func _manage_animation():
 	else:
 		anim.play("idle")
 
+func take_damage(amount : int):
+	health -= amount
+	if health <= 0:
+		call_deferred("game_over")
 
 func _process(delta):
 	_manage_animation()
+
+func game_over():
+	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
