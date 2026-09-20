@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ce18e8mmg6jty"]
+
+[ext_resource type="Script" uid="uid://bbtpsfrjkhfcy" path="res://Scripts/tadpole.gd" id="1_ccg2v"]
+[ext_resource type="Texture2D" uid="uid://cmww4goappwgu" path="res://Objects/tadpole.png" id="2_7ebwk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qyy32"]
+radius = 6.0
+
+[node name="Tadpole" type="Area2D" unique_id=1344344256]
+script = ExtResource("1_ccg2v")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=34586351]
+texture = ExtResource("2_7ebwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1659883446]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_qyy32")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

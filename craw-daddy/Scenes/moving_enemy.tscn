@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bduu8fwo5n481"]
+
+[ext_resource type="Script" uid="uid://c80gflwvytpr5" path="res://Scripts/moving_enemy_walls.gd" id="1_vit6p"]
+[ext_resource type="Texture2D" uid="uid://bpid0pyyy5b1c" path="res://Sprites/Characters/bTop1.png" id="2_06uj5"]
+[ext_resource type="Texture2D" uid="uid://brp5el0tti4ya" path="res://Sprites/Characters/bTop2.png" id="3_m0ssm"]
+[ext_resource type="Texture2D" uid="uid://l12r0b4n0l8o" path="res://Sprites/Characters/net1.png" id="4_voc2l"]
+[ext_resource type="Texture2D" uid="uid://c8k753alog75g" path="res://Sprites/Characters/net2.png" id="5_ldi3d"]
+[ext_resource type="Texture2D" uid="uid://de7obftx61hrs" path="res://Sprites/Characters/rock1.png" id="6_qsr5t"]
+[ext_resource type="Texture2D" uid="uid://d1gq1qqd6e8yk" path="res://Sprites/Characters/rock2.png" id="7_qgvk5"]
+
+[node name="Moving_Enemy" type="CharacterBody2D" unique_id=329638981]
+script = ExtResource("1_vit6p")
+textures = Array[Texture2D]([ExtResource("2_06uj5"), ExtResource("3_m0ssm"), ExtResource("4_voc2l"), ExtResource("5_ldi3d"), ExtResource("6_qsr5t"), ExtResource("7_qgvk5")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=236655836]
+
+[node name="Collision_Walls" type="CollisionShape2D" parent="." unique_id=1882519972]
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=860243695]
+
+[node name="Collision_Player" type="CollisionShape2D" parent="Hitbox" unique_id=477363949]
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=544940009]
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

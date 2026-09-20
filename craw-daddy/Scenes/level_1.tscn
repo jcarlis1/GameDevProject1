@@ -5,11 +5,15 @@
 [ext_resource type="TileSet" uid="uid://dp2wkhtnihe4m" path="res://Sprites/new_tile_set.tres" id="2_xfk5q"]
 [ext_resource type="Script" uid="uid://dyq6utn738nll" path="res://Scripts/world_boundary.gd" id="4_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://bgiml7xbfl4mt" path="res://Scenes/enemy_can.tscn" id="5_6444e"]
+[ext_resource type="PackedScene" uid="uid://dq0v2ph6gxjca" path="res://Scenes/enemy_bottle.tscn" id="6_wrinw"]
+[ext_resource type="PackedScene" uid="uid://ce18e8mmg6jty" path="res://Scenes/tadpole.tscn" id="6_xrdnt"]
+[ext_resource type="PackedScene" uid="uid://bduu8fwo5n481" path="res://Scenes/moving_enemy.tscn" id="7_chwpn"]
+[ext_resource type="PackedScene" uid="uid://b7jlxxswgxjso" path="res://Scenes/plant.tscn" id="7_lsmp6"]
+[ext_resource type="Script" uid="uid://c0r4xshe0q5j8" path="res://Scripts/spawner.gd" id="9_chwpn"]
 
 [node name="Main" type="Node2D" unique_id=297703182]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1398897550]
-position = Vector2(-56, -32)
 scale = Vector2(1, 0.80533856)
 texture = ExtResource("1_vk57k")
 
@@ -33,7 +37,7 @@ tile_map_data = PackedByteArray("AADw/wUAAAALAAMAAADx/wUAAAAMAAMAAADy/wUAAAANAAM
 tile_set = ExtResource("2_xfk5q")
 
 [node name="Player" parent="." unique_id=507803602 instance=ExtResource("2_8ffim")]
-position = Vector2(-280, 3)
+position = Vector2(-289, 4)
 
 [node name="WorldBoundary" type="StaticBody2D" parent="." unique_id=1106045267]
 script = ExtResource("4_7p6j4")
@@ -41,5 +45,30 @@ script = ExtResource("4_7p6j4")
 [node name="Enemys" type="Node" parent="." unique_id=2033080886]
 
 [node name="Enemy_Can" parent="Enemys" unique_id=1377686609 instance=ExtResource("5_6444e")]
+position = Vector2(-22, 0)
+
+[node name="Enemy_Can2" parent="Enemys" unique_id=17695952 instance=ExtResource("5_6444e")]
+position = Vector2(1403, -8)
+
+[node name="Enemy_Bottle" parent="Enemys" unique_id=645569802 instance=ExtResource("6_wrinw")]
+position = Vector2(572, 42)
+
+[node name="Moving_Enemy" parent="Enemys" unique_id=329638981 instance=ExtResource("7_chwpn")]
 
 [node name="Food" type="Node" parent="." unique_id=2029126564]
+
+[node name="Tadpole" parent="Food" unique_id=1344344256 instance=ExtResource("6_xrdnt")]
+position = Vector2(-31, 140)
+
+[node name="Plant" parent="Food" unique_id=641948559 instance=ExtResource("7_lsmp6")]
+position = Vector2(534, 47)
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1970376584]
+script = ExtResource("9_chwpn")
+enemy_scene = ExtResource("7_chwpn")
+
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=1791870311]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]

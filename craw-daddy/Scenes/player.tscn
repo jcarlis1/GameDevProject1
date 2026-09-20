@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://dnb68pqks57el" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://cwdmertys6nvw" path="res://Sprites/Characters/charac1.png" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://ds6g1ke0mv4ge" path="res://Sprites/Characters/charac2.png" id="3_6t5aa"]
+[ext_resource type="Script" uid="uid://0kgdbml80s7y" path="res://Scripts/camera_2d.gd" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://c62f24lt3i3mw" path="res://Sprites/Characters/charac3.png" id="3_vgqql"]
+[ext_resource type="Script" uid="uid://bav4mybi3udyg" path="res://Scripts/player_ui.gd" id="6_3smsa"]
+[ext_resource type="Texture2D" uid="uid://cx00lsp7rhi48" path="res://Objects/heart.png" id="6_x3wgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lp5if"]
 size = Vector2(30, 15)
@@ -20,6 +24,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [ExtResource("1_v0iea")]
+}
+
+[sub_resource type="Animation" id="Animation_3smsa"]
+resource_name = "damage"
+length = 0.39999999999999997
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2, 0.26666668, 0.33333334, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_vgqql"), null, ExtResource("3_vgqql"), null, ExtResource("3_vgqql"), null, ExtResource("3_vgqql")]
 }
 
 [sub_resource type="Animation" id="Animation_fkybt"]
@@ -58,9 +78,14 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3smsa"]
 _data = {
 &"RESET": SubResource("Animation_vgqql"),
+&"damage": SubResource("Animation_3smsa"),
 &"idle": SubResource("Animation_fkybt"),
 &"move": SubResource("Animation_x3wgy")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_qyy32"]
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 0.49411765)
 
 [node name="Player" type="CharacterBody2D" unique_id=507803602 groups=["Player"]]
 script = ExtResource("1_cvnsp")
@@ -76,8 +101,42 @@ shape = SubResource("RectangleShape2D_lp5if")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=240099761]
 offset = Vector2(0, -5)
 zoom = Vector2(2, 2)
+script = ExtResource("3_fkybt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=181068614]
 libraries/ = SubResource("AnimationLibrary_3smsa")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1780804194]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1238993768]
+layer = 10
+script = ExtResource("6_3smsa")
+
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=325879550]
+offset_left = -275.0
+offset_top = -148.0
+offset_right = -140.0
+offset_bottom = -106.0
+
+[node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1520998314]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="Heart2" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=871651938]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="Heart3" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1763034616]
+layout_mode = 2
+texture = ExtResource("6_x3wgy")
+expand_mode = 2
+
+[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=436573786]
+offset_left = -259.0
+offset_top = -100.0
+offset_right = -176.0
+offset_bottom = -72.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_qyy32")
