@@ -28,7 +28,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_3smsa"]
 resource_name = "damage"
-length = 0.39999999999999997
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,25 +98,19 @@ texture = ExtResource("1_v0iea")
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_lp5if")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=240099761]
-offset = Vector2(0, -5)
-zoom = Vector2(2, 2)
-script = ExtResource("3_fkybt")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=181068614]
 libraries/ = SubResource("AnimationLibrary_3smsa")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1780804194]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1238993768]
-layer = 10
 script = ExtResource("6_3smsa")
 
 [node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=325879550]
-offset_left = -275.0
-offset_top = -148.0
-offset_right = -140.0
-offset_bottom = -106.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 141.0
+offset_bottom = 48.0
 
 [node name="Heart" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1520998314]
 layout_mode = 2
@@ -134,9 +128,14 @@ texture = ExtResource("6_x3wgy")
 expand_mode = 2
 
 [node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=436573786]
-offset_left = -259.0
-offset_top = -100.0
-offset_right = -176.0
-offset_bottom = -72.0
+offset_left = 13.0
+offset_top = 45.0
+offset_right = 96.0
+offset_bottom = 73.0
 text = "Score: 0"
 label_settings = SubResource("LabelSettings_qyy32")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=240099761]
+offset = Vector2(0, -5)
+zoom = Vector2(2, 2)
+script = ExtResource("3_fkybt")

@@ -20,7 +20,7 @@ func resize():
 		n.queue_free()
 	
 	for bound in [
-		[Vector2(1, 0), -420 + padding],
+		[Vector2(1, 0), -618 + padding],
 		[Vector2(-1, 0), -size.x * num_backgrounds + padding],
 		[Vector2(0, 1), -150 + padding],
 		[Vector2(0, -1), -size.y + padding],
