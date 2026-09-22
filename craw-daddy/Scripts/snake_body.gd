@@ -15,7 +15,7 @@ func _ready() -> void:
 		global_position = player.global_position - Vector2(500, 0)
 		
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if is_instance_valid(player):
 		# Recalculates direction to player every frame, updating Y movement dynamically
 		var move_direction = (player.global_position - global_position).normalized()
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-func _process(delta):
+func _process(_delta):
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x < 0
 

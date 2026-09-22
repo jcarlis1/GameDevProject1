@@ -7,7 +7,7 @@ var bob_speed : float = 5.0
 @onready var start_pos : Vector2 = global_position
 @onready var sprite : Sprite2D = $Sprite
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var time = Time.get_unix_time_from_system()
 	# rotate
 	sprite.scale.x = sin(time * rotate_speed)
@@ -21,12 +21,12 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
-	body.increse_health(1)
+	body.increase_health(1)
 	queue_free()

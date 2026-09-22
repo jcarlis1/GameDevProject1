@@ -43,7 +43,7 @@ func take_damage(amount : int):
 	if health <= 0:
 		call_deferred("game_over")
 
-func _process(delta):
+func _process(_delta):
 	if velocity.x != 0:
 		sprite.flip_h = velocity.x < 0
 	_manage_animation()

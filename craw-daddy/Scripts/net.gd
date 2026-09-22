@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Ignore process if already dropped or if player is missing
 	if has_dropped or not is_instance_valid(player):
 		return
@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 
 func start_drop_and_scoop() -> void:
 	var start_pos: Vector2 = global_position
-	var target_pos: Vector2 = start_pos + Vector2(0, drop_distance)
+	#var target_pos: Vector2 = start_pos + Vector2(0, drop_distance)
 	# set_parallel(false) ensures steps run sequentially (Drop -> Scoop -> Return)
 	var tween = create_tween().set_parallel(false)
 	

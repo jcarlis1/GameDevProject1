@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://d1c8u12uwhix3"]
+
+[ext_resource type="Texture2D" uid="uid://cq4vk74bqvwxe" path="res://Objects/flag.png" id="1_m85dk"]
+[ext_resource type="Script" uid="uid://bdeasditcgboe" path="res://Scripts/end_flag.gd" id="1_xlkuy"]
+[ext_resource type="PackedScene" uid="uid://blxn7cvxp780s" path="res://Scenes/player.tscn" id="2_apwkr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thwiu"]
+size = Vector2(15.666667, 17.333334)
+
+[node name="EndFlag" type="Area2D" unique_id=585533299]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_xlkuy")
+scene_to_load = ExtResource("2_apwkr")
+
+[node name="Flag" type="Sprite2D" parent="." unique_id=1481186964]
+texture = ExtResource("1_m85dk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=466439319]
+position = Vector2(0.8333335, 0.66666675)
+shape = SubResource("RectangleShape2D_thwiu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

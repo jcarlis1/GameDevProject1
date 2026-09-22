@@ -1,6 +1,7 @@
 extends Area2D
 
-@export var damage: int = 3
+@export var scene_to_load : PackedScene
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -14,5 +15,4 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
-	
-	body.take_damage(damage)
+	get_tree().change_scene_to_packed(scene_to_load)
