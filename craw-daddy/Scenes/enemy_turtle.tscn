@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://qc7lby3pqqy8"]
+
+[ext_resource type="Script" uid="uid://cyubdvk1v27yb" path="res://Scripts/turtle.gd" id="1_1okv0"]
+[ext_resource type="Texture2D" uid="uid://ba7qysjpy2er6" path="res://Sprites/Characters/turtle.png" id="2_hk1e5"]
+[ext_resource type="Texture2D" uid="uid://kjldxo1il3qu" path="res://Sprites/Characters/turtle_0.png" id="3_pdf0x"]
+[ext_resource type="Texture2D" uid="uid://cplqx4xenid1l" path="res://Sprites/Characters/turtle_1.png" id="4_s8sdt"]
+[ext_resource type="Texture2D" uid="uid://m4nivdxgcvyt" path="res://Sprites/Characters/turtle_2.png" id="5_7ucpa"]
+[ext_resource type="Texture2D" uid="uid://b7gobff68ae1o" path="res://Sprites/Characters/turtle_3.png" id="6_ygde7"]
+[ext_resource type="Texture2D" uid="uid://b3qml6djmitx2" path="res://Sprites/Characters/turtle_4.png" id="7_4u5gs"]
+[ext_resource type="Texture2D" uid="uid://d3f4actbgcqs3" path="res://Sprites/Characters/turtle_5.png" id="8_y6okm"]
+[ext_resource type="Texture2D" uid="uid://hlp15qwedf6b" path="res://Sprites/Characters/turtle_6.png" id="9_4h60g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtjvt"]
+size = Vector2(41, 50.5)
+
+[sub_resource type="Animation" id="Animation_dd8tc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteHead:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_pdf0x")]
+}
+
+[sub_resource type="Animation" id="Animation_25l1h"]
+resource_name = "attack"
+length = 0.19999999999999998
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteHead:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1, 0.13333334, 0.16666667, 0.56666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_pdf0x"), ExtResource("4_s8sdt"), ExtResource("5_7ucpa"), ExtResource("6_ygde7"), ExtResource("7_4u5gs"), ExtResource("8_y6okm"), ExtResource("9_4h60g")]
+}
+
+[sub_resource type="Animation" id="Animation_otkab"]
+resource_name = "waiting"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteHead:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_pdf0x")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ntjnm"]
+_data = {
+&"RESET": SubResource("Animation_dd8tc"),
+&"attack": SubResource("Animation_25l1h"),
+&"waiting": SubResource("Animation_otkab")
+}
+
+[node name="Enemy_Turtle" type="Area2D" unique_id=569538180]
+script = ExtResource("1_1okv0")
+
+[node name="SpriteBody" type="Sprite2D" parent="." unique_id=1150869937]
+texture = ExtResource("2_hk1e5")
+
+[node name="SpriteHead" type="Sprite2D" parent="." unique_id=2126592629]
+position = Vector2(-36, -20)
+texture = ExtResource("3_pdf0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=459064169]
+position = Vector2(-39.5, -11.75)
+shape = SubResource("RectangleShape2D_xtjvt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=777768441]
+libraries/ = SubResource("AnimationLibrary_ntjnm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

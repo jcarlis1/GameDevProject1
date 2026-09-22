@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://b7jlxxswgxjso" path="res://Scenes/plant.tscn" id="7_lsmp6"]
 [ext_resource type="PackedScene" uid="uid://fe6omui4g5g7" path="res://Scenes/snake.tscn" id="8_af3po"]
 [ext_resource type="Script" uid="uid://c0r4xshe0q5j8" path="res://Scripts/spawner.gd" id="9_chwpn"]
+[ext_resource type="PackedScene" uid="uid://qc7lby3pqqy8" path="res://Scenes/enemy_turtle.tscn" id="9_uy8f0"]
+[ext_resource type="PackedScene" uid="uid://cqwrm5rix2idw" path="res://Scenes/enemy_toxic.tscn" id="10_6r07y"]
+[ext_resource type="PackedScene" uid="uid://cm71tfrjfc1m0" path="res://Scenes/enemy_net.tscn" id="11_6ioyp"]
+[ext_resource type="PackedScene" uid="uid://d4ao3ms4vshq7" path="res://Scenes/heart.tscn" id="14_oovug"]
 
 [node name="Main" type="Node2D" unique_id=297703182]
 position = Vector2(-133, 5)
@@ -61,13 +65,68 @@ position = Vector2(435, 46)
 [node name="Enemy_Snake" parent="Enemys" unique_id=1149337322 instance=ExtResource("8_af3po")]
 position = Vector2(-579, 11)
 
-[node name="Food" type="Node" parent="." unique_id=2029126564]
+[node name="Enemy_Turtle" parent="Enemys" unique_id=569538180 instance=ExtResource("9_uy8f0")]
+position = Vector2(708, 45)
 
-[node name="Tadpole" parent="Food" unique_id=1344344256 instance=ExtResource("6_xrdnt")]
+[node name="Enemy_Turtle2" parent="Enemys" unique_id=1442826022 instance=ExtResource("9_uy8f0")]
+position = Vector2(2133, -73)
+
+[node name="Enemy_Turtle3" parent="Enemys" unique_id=646950078 instance=ExtResource("9_uy8f0")]
+position = Vector2(3126.0005, 31.999975)
+rotation = 0.7086037
+
+[node name="Enemy_Toxic" parent="Enemys" unique_id=43557825 instance=ExtResource("10_6r07y")]
+position = Vector2(1064, 143)
+
+[node name="Enemy_Toxic2" parent="Enemys" unique_id=490471149 instance=ExtResource("10_6r07y")]
+position = Vector2(2628, -66)
+
+[node name="Enemy_Toxic3" parent="Enemys" unique_id=232476091 instance=ExtResource("10_6r07y")]
+position = Vector2(3900, 142)
+
+[node name="Enemy_Net" parent="Enemys" unique_id=1342663523 instance=ExtResource("11_6ioyp")]
+position = Vector2(533, -366)
+
+[node name="Enemy_Net2" parent="Enemys" unique_id=868563660 instance=ExtResource("11_6ioyp")]
+position = Vector2(2278, -365)
+
+[node name="Collectables" type="Node" parent="." unique_id=2029126564]
+
+[node name="Tadpole" parent="Collectables" unique_id=1344344256 instance=ExtResource("6_xrdnt")]
 position = Vector2(-31, 140)
 
-[node name="Plant" parent="Food" unique_id=641948559 instance=ExtResource("7_lsmp6")]
+[node name="Tadpole2" parent="Collectables" unique_id=540028826 instance=ExtResource("6_xrdnt")]
+position = Vector2(629, -11)
+scale = Vector2(1, 1)
+
+[node name="Tadpole3" parent="Collectables" unique_id=952618670 instance=ExtResource("6_xrdnt")]
+position = Vector2(1380, 101)
+scale = Vector2(1, 1)
+
+[node name="Tadpole4" parent="Collectables" unique_id=1790168433 instance=ExtResource("6_xrdnt")]
+position = Vector2(2550, -104)
+scale = Vector2(1, 1)
+
+[node name="Tadpole5" parent="Collectables" unique_id=995525888 instance=ExtResource("6_xrdnt")]
+position = Vector2(3413, -50)
+scale = Vector2(1, 1)
+
+[node name="Plant" parent="Collectables" unique_id=641948559 instance=ExtResource("7_lsmp6")]
 position = Vector2(395, 48)
+
+[node name="Plant2" parent="Collectables" unique_id=1891855004 instance=ExtResource("7_lsmp6")]
+position = Vector2(1012, 99)
+
+[node name="Plant3" parent="Collectables" unique_id=1586324141 instance=ExtResource("7_lsmp6")]
+position = Vector2(1839, -120)
+
+[node name="Plant4" parent="Collectables" unique_id=292746903 instance=ExtResource("7_lsmp6")]
+position = Vector2(3069, -76)
+
+[node name="Plant5" parent="Collectables" unique_id=26690508 instance=ExtResource("7_lsmp6")]
+position = Vector2(3764, 99)
+
+[node name="Heart" parent="Collectables" unique_id=1286127142 instance=ExtResource("14_oovug")]
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1970376584]
 script = ExtResource("9_chwpn")

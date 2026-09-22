@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cm71tfrjfc1m0"]
+
+[ext_resource type="Script" uid="uid://bc4ush3h338yn" path="res://Scripts/net.gd" id="1_2quq1"]
+[ext_resource type="Texture2D" uid="uid://cc6cxwjvxgx7a" path="res://Sprites/Characters/net.png" id="2_y7d0g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qyy32"]
+radius = 23.0
+height = 62.0
+
+[node name="Enemy_Net" type="Area2D" unique_id=1342663523]
+script = ExtResource("1_2quq1")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=833891529]
+scale = Vector2(2, 2)
+texture = ExtResource("2_y7d0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2050024715]
+position = Vector2(-14, 32)
+shape = SubResource("CapsuleShape2D_qyy32")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

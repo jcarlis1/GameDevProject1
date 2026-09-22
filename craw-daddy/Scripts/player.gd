@@ -51,6 +51,10 @@ func _process(delta):
 func increase_score(amount : int):
 	PlayerStats.score += amount
 	OnUpdateScore.emit(PlayerStats.score)
+
+func increase_health(amount : int):
+	health += amount
+	OnUpdateHealth.emit(health)
 	
 func game_over():
 	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")

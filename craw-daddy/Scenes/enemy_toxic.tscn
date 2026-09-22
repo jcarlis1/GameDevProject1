@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cqwrm5rix2idw"]
+
+[ext_resource type="Script" uid="uid://cb4bx8pqjfv43" path="res://Scripts/toxic.gd" id="1_egu0u"]
+[ext_resource type="Texture2D" uid="uid://csq588fpkktr7" path="res://Sprites/Characters/toxic.png" id="2_32wem"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qyy32"]
+radius = 16.0
+height = 50.0
+
+[node name="Enemy_Toxic" type="Area2D" unique_id=43557825]
+script = ExtResource("1_egu0u")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=701626336]
+texture = ExtResource("2_32wem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1755643605]
+position = Vector2(0, -12)
+shape = SubResource("CapsuleShape2D_qyy32")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
