@@ -27,12 +27,12 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _manage_animation():
-	if move_input != 0 or move_input2 != 0:
-		anim.play("move")
-	elif damaged:
+	if damaged:
 		anim.play("damage")
 		await get_tree().create_timer(1.0).timeout
 		damaged = false
+	elif move_input != 0 or move_input2 != 0:
+		anim.play("move")
 	else:
 		anim.play("idle")
 

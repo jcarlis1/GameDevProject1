@@ -9,12 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://ce18e8mmg6jty" path="res://Scenes/tadpole.tscn" id="6_xrdnt"]
 [ext_resource type="PackedScene" uid="uid://bduu8fwo5n481" path="res://Scenes/moving_enemy.tscn" id="7_chwpn"]
 [ext_resource type="PackedScene" uid="uid://b7jlxxswgxjso" path="res://Scenes/plant.tscn" id="7_lsmp6"]
-[ext_resource type="Script" uid="uid://bryxyuubj6m0e" path="res://Scripts/snake.gd" id="8_uy8f0"]
-[ext_resource type="Texture2D" uid="uid://f3onhg3ttykc" path="res://Sprites/Characters/snake2.png" id="9_6r07y"]
+[ext_resource type="PackedScene" uid="uid://fe6omui4g5g7" path="res://Scenes/snake.tscn" id="8_af3po"]
 [ext_resource type="Script" uid="uid://c0r4xshe0q5j8" path="res://Scripts/spawner.gd" id="9_chwpn"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtjvt"]
-size = Vector2(17, 24)
 
 [node name="Main" type="Node2D" unique_id=297703182]
 position = Vector2(-133, 5)
@@ -58,20 +54,12 @@ position = Vector2(-22, 0)
 position = Vector2(1403, -8)
 
 [node name="Enemy_Bottle" parent="Enemys" unique_id=645569802 instance=ExtResource("6_wrinw")]
-position = Vector2(572, 42)
+position = Vector2(435, 46)
 
 [node name="Moving_Enemy" parent="Enemys" unique_id=329638981 instance=ExtResource("7_chwpn")]
 
-[node name="Enemy_Snake" type="CharacterBody2D" parent="Enemys" unique_id=2008062605]
+[node name="Enemy_Snake" parent="Enemys" unique_id=1149337322 instance=ExtResource("8_af3po")]
 position = Vector2(-579, 11)
-script = ExtResource("8_uy8f0")
-
-[node name="Sprite" type="Sprite2D" parent="Enemys/Enemy_Snake" unique_id=450625602]
-texture = ExtResource("9_6r07y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemys/Enemy_Snake" unique_id=2019637869]
-position = Vector2(31.5, -10)
-shape = SubResource("RectangleShape2D_xtjvt")
 
 [node name="Food" type="Node" parent="." unique_id=2029126564]
 
@@ -79,7 +67,7 @@ shape = SubResource("RectangleShape2D_xtjvt")
 position = Vector2(-31, 140)
 
 [node name="Plant" parent="Food" unique_id=641948559 instance=ExtResource("7_lsmp6")]
-position = Vector2(534, 47)
+position = Vector2(395, 48)
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=1970376584]
 script = ExtResource("9_chwpn")

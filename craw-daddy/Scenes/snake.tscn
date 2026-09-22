@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://fe6omui4g5g7"]
+
+[ext_resource type="Script" uid="uid://bryxyuubj6m0e" path="res://Scripts/snake_body.gd" id="1_pox6b"]
+[ext_resource type="Texture2D" uid="uid://f3onhg3ttykc" path="res://Sprites/Characters/snake2.png" id="2_rku0m"]
+[ext_resource type="Script" uid="uid://csj7uh2fl3tj6" path="res://Scripts/snake_mouth.gd" id="3_rku0m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtjvt"]
+size = Vector2(17, 41.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmvgn"]
+size = Vector2(14.5, 25)
+
+[node name="Enemy_Snake" type="CharacterBody2D" unique_id=1149337322]
+script = ExtResource("1_pox6b")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1659562646]
+texture = ExtResource("2_rku0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859548180]
+position = Vector2(26, -1.75)
+shape = SubResource("RectangleShape2D_xtjvt")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1201314228]
+position = Vector2(35, -11)
+script = ExtResource("3_rku0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2100593532]
+position = Vector2(-0.25, 0.5)
+shape = SubResource("RectangleShape2D_lmvgn")
+
+[connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]
