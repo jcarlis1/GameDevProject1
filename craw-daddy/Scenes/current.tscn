@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cp5iibhlcuhad"]
+
+[ext_resource type="Texture2D" uid="uid://dom512epvckk3" path="res://Sprites/current.png" id="1_7f2ag"]
+
+[node name="Current" type="Sprite2D" unique_id=489527031]
+self_modulate = Color(1, 1, 1, 0.3372549)
+scale = Vector2(1.5106535, 0.46321622)
+texture = ExtResource("1_7f2ag")

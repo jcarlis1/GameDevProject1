@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c2ctwpaegp16q"]
+
+[ext_resource type="Texture2D" uid="uid://durd0gm7a1l5n" path="res://Sprites/Background2.jpeg" id="1_dhgib"]
+[ext_resource type="Texture2D" uid="uid://c00wm0s50indq" path="res://Sprites/dig/frame_001.png" id="2_pvime"]
+[ext_resource type="Texture2D" uid="uid://bmx2j1wd1qm7s" path="res://Sprites/dig/frame_002.png" id="3_6kgr8"]
+[ext_resource type="Texture2D" uid="uid://c86lxummdumup" path="res://Sprites/dig/frame_003.png" id="4_ljsse"]
+[ext_resource type="Texture2D" uid="uid://dgw3x5niw0mrx" path="res://Sprites/dig/frame_004.png" id="5_rv8k1"]
+[ext_resource type="Texture2D" uid="uid://ckaok0yms33n7" path="res://Sprites/dig/frame_005.png" id="6_yq05k"]
+[ext_resource type="Texture2D" uid="uid://bw5vhs78kpfch" path="res://Sprites/dig/frame_006.png" id="7_x8q6a"]
+[ext_resource type="Texture2D" uid="uid://ds6qlqnaxq2lf" path="res://Sprites/dig/frame_007.png" id="8_l8kqp"]
+[ext_resource type="Texture2D" uid="uid://b4sywovt8m544" path="res://Sprites/dig/frame_008.png" id="9_ygkho"]
+[ext_resource type="Texture2D" uid="uid://c7o7v3gnbb8fr" path="res://Sprites/dig/frame_009.png" id="10_j8asg"]
+[ext_resource type="Texture2D" uid="uid://fiaxkwjf07vy" path="res://Sprites/dig/frame_010.png" id="11_dv2oe"]
+[ext_resource type="Texture2D" uid="uid://dmvveruyly0ij" path="res://Sprites/dig/frame_011.png" id="12_w55rn"]
+[ext_resource type="Texture2D" uid="uid://dd8i1nhtc6xxo" path="res://Sprites/dig/frame_012.png" id="13_018o7"]
+[ext_resource type="Script" uid="uid://cu6lphkpx6l70" path="res://Scripts/ending_dig.gd" id="14_6kgr8"]
+[ext_resource type="PackedScene" uid="uid://blxn7cvxp780s" path="res://Scenes/player.tscn" id="15_ljsse"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lp5if"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pvime")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6kgr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ljsse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rv8k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yq05k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_x8q6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l8kqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ygkho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j8asg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dv2oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_w55rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_018o7")
+}],
+"loop": 0,
+"name": &"dig",
+"speed": 12.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qyy32"]
+font_size = 38
+
+[node name="EndingScene" type="Node2D" unique_id=2016117271]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=901234848]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=462912518]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dhgib")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1467175296]
+position = Vector2(565, 362)
+sprite_frames = SubResource("SpriteFrames_lp5if")
+animation = &"dig"
+script = ExtResource("14_6kgr8")
+scene_to_load = ExtResource("15_ljsse")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1708528644]
+offset_left = 487.0
+offset_top = 556.0
+offset_right = 647.0
+offset_bottom = 609.0
+text = "Escaped!"
+label_settings = SubResource("LabelSettings_qyy32")
+
+[connection signal="animation_finished" from="CanvasLayer/AnimatedSprite2D" to="CanvasLayer/AnimatedSprite2D" method="_on_animation_finished"]

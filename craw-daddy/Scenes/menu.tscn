@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dns14h5mmxrk0"]
+
+[ext_resource type="Texture2D" uid="uid://b1ly514h4xm38" path="res://Sprites/menu.jpeg" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://7vitxfpxhq7h" path="res://Scripts/menu.gd" id="1_xhh6f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qyy32"]
+font_size = 50
+font_color = Color(0.8140669, 0.24459589, 0.17229557, 1)
+outline_size = 13
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+
+[node name="Menu" type="Control" unique_id=609383191]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xhh6f")
+
+[node name="Background" type="TextureRect" parent="." unique_id=689531512]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1rerr")
+expand_mode = 5
+
+[node name="Title" type="Label" parent="." unique_id=51198037]
+layout_mode = 1
+offset_left = 84.0
+offset_top = 23.0
+offset_right = 352.0
+offset_bottom = 87.0
+text = "CrawDaddy!"
+label_settings = SubResource("LabelSettings_qyy32")
+
+[node name="PlayButton" type="Button" parent="." unique_id=535451582]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 62.0
+offset_top = -7.0
+offset_right = 186.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="." unique_id=1646940215]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 856.0
+offset_top = 319.0
+offset_right = 969.0
+offset_bottom = 406.0
+text = "Quit"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

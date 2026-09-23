@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://csj7uh2fl3tj6" path="res://Scripts/snake_mouth.gd" id="3_rku0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtjvt"]
-size = Vector2(17, 41.5)
+size = Vector2(17, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lmvgn"]
 size = Vector2(14.5, 25)
@@ -17,7 +17,7 @@ script = ExtResource("1_pox6b")
 texture = ExtResource("2_rku0m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1859548180]
-position = Vector2(26, -1.75)
+position = Vector2(26, -9.5)
 shape = SubResource("RectangleShape2D_xtjvt")
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=1201314228]
