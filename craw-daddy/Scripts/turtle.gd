@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var anim : AnimationPlayer = $AnimationPlayer
+@onready var turtle : AudioStreamPlayer = $AudioStreamPlayer
+
 @export var trigger_distance: float = 130.0
 
 var player: Node2D = null
@@ -21,6 +23,7 @@ func _process(_delta: float) -> void:
 	if dist_to_player <= trigger_distance:
 		# Only trigger play() if not already playing to prevent restarting every frame
 		if anim.current_animation != "attack":
+			turtle.play()
 			anim.play("attack")
 	else:
 		if anim.current_animation != "waiting":

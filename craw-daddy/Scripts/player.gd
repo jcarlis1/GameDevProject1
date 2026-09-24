@@ -6,15 +6,19 @@ extends CharacterBody2D
 
 @onready var sprite : Sprite2D = $Sprite
 @onready var anim : AnimationPlayer = $AnimationPlayer
+@onready var damage_sounds : AudioStreamPlayer = $DamageSFX
+@onready var eat_sounds : AudioStreamPlayer = $EatSFX
+@onready var health_sound : AudioStreamPlayer = $HealthSFX
 
 var move_input : float
 var move_input2 : float
-
 var damaged : bool = false
+
 
 signal OnUpdateHealth (health : int)
 signal OnUpdateScore (score : int)
 
+	
 func _physics_process(delta: float) -> void:
 	move_input = Input.get_axis("move_left", "move_right")
 	move_input2 = Input.get_axis("move_up", "move_down")
@@ -37,6 +41,7 @@ func _manage_animation():
 		anim.play("idle")
 
 func take_damage(amount : int):
+	damage_sounds.play()
 	health -= amount
 	damaged = true
 	OnUpdateHealth.emit(health)
@@ -49,12 +54,19 @@ func _process(_delta):
 	_manage_animation()
 
 func increase_score(amount : int):
+	eat_sounds.play()
 	PlayerStats.score += amount
 	OnUpdateScore.emit(PlayerStats.score)
 
 func increase_health(amount : int):
-	health += amount
+	health_sound.play()
+	if health < 3:
+		health += amount
 	OnUpdateHealth.emit(health)
+
+#func play_sound(sound : AudioStream):
+	#audio.stream = sound
+	#audio.play()
 	
 func game_over():
 	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")

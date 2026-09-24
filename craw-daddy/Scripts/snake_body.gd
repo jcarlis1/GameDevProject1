@@ -5,10 +5,12 @@ var player: Node2D = null
 var damage : int = 3
 @onready var sprite : Sprite2D = $Sprite
 @onready var hitbox : Area2D = $Hitbox
+@onready var snake : AudioStreamPlayer = $AudioStreamPlayer
 
 var base_hitbox_x: float = 0.0
 
 func _ready() -> void:
+	snake.play()
 	player = get_tree().get_first_node_in_group("Player")
 	base_hitbox_x = abs(hitbox.position.x)
 	if is_instance_valid(player):

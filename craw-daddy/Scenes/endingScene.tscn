@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dmvveruyly0ij" path="res://Sprites/dig/frame_011.png" id="12_w55rn"]
 [ext_resource type="Texture2D" uid="uid://dd8i1nhtc6xxo" path="res://Sprites/dig/frame_012.png" id="13_018o7"]
 [ext_resource type="Script" uid="uid://cu6lphkpx6l70" path="res://Scripts/ending_dig.gd" id="14_6kgr8"]
-[ext_resource type="PackedScene" uid="uid://blxn7cvxp780s" path="res://Scenes/player.tscn" id="15_ljsse"]
+[ext_resource type="PackedScene" uid="uid://bf1vi76dttqiu" path="res://Scenes/level_2.tscn" id="15_ljsse"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lp5if"]
 animations = [{
@@ -63,6 +63,9 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_qyy32"]
 font_size = 38
 
+[sub_resource type="LabelSettings" id="LabelSettings_xtjvt"]
+font_size = 42
+
 [node name="EndingScene" type="Node2D" unique_id=2016117271]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=901234848]
@@ -76,18 +79,26 @@ grow_vertical = 2
 texture = ExtResource("1_dhgib")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1467175296]
-position = Vector2(565, 362)
+position = Vector2(567, 315)
 sprite_frames = SubResource("SpriteFrames_lp5if")
 animation = &"dig"
 script = ExtResource("14_6kgr8")
 scene_to_load = ExtResource("15_ljsse")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=1708528644]
-offset_left = 487.0
-offset_top = 556.0
-offset_right = 647.0
-offset_bottom = 609.0
-text = "Escaped!"
+offset_left = 259.0
+offset_top = 542.0
+offset_right = 895.0
+offset_bottom = 595.0
+text = "Because it saw the oceans bottom!"
 label_settings = SubResource("LabelSettings_qyy32")
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=912584995]
+offset_left = 298.0
+offset_top = 40.0
+offset_right = 865.0
+offset_bottom = 98.0
+text = "Why did the crawfish blush?"
+label_settings = SubResource("LabelSettings_xtjvt")
 
 [connection signal="animation_finished" from="CanvasLayer/AnimatedSprite2D" to="CanvasLayer/AnimatedSprite2D" method="_on_animation_finished"]

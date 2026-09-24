@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bc4ush3h338yn" path="res://Scripts/net.gd" id="1_2quq1"]
 [ext_resource type="Texture2D" uid="uid://cc6cxwjvxgx7a" path="res://Sprites/Characters/net.png" id="2_y7d0g"]
+[ext_resource type="AudioStream" uid="uid://8stj45usm1qh" path="res://Audio/In-the-net.wav" id="3_y7d0g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qyy32"]
 radius = 23.0
@@ -17,5 +18,9 @@ texture = ExtResource("2_y7d0g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2050024715]
 position = Vector2(-14, 32)
 shape = SubResource("CapsuleShape2D_qyy32")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1410928571]
+stream = ExtResource("3_y7d0g")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

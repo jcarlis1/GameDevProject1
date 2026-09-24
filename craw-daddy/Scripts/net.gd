@@ -9,7 +9,8 @@ extends Area2D
 @export var scoop_duration: float = 0.4 # Speed of the scoop swing
 @export var pause_before_retract: float = 0.3 # Brief pause before pulling up
 @export var retract_duration: float = 0.8     # Speed of pulling back up
-#@export var destroy_on_complete: bool = false
+
+@onready var net : AudioStreamPlayer = $AudioStreamPlayer
 
 var player: Node2D = null
 var has_dropped: bool = false
@@ -34,7 +35,7 @@ func _process(_delta: float) -> void:
 
 func start_drop_and_scoop() -> void:
 	var start_pos: Vector2 = global_position
-	#var target_pos: Vector2 = start_pos + Vector2(0, drop_distance)
+	net.play()
 	# set_parallel(false) ensures steps run sequentially (Drop -> Scoop -> Return)
 	var tween = create_tween().set_parallel(false)
 	

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bryxyuubj6m0e" path="res://Scripts/snake_body.gd" id="1_pox6b"]
 [ext_resource type="Texture2D" uid="uid://f3onhg3ttykc" path="res://Sprites/Characters/snake2.png" id="2_rku0m"]
 [ext_resource type="Script" uid="uid://csj7uh2fl3tj6" path="res://Scripts/snake_mouth.gd" id="3_rku0m"]
+[ext_resource type="AudioStream" uid="uid://byj6qyvbbme4c" path="res://Audio/Going-to-eat-you.wav" id="4_lmvgn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtjvt"]
 size = Vector2(17, 23)
@@ -27,5 +28,9 @@ script = ExtResource("3_rku0m")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=2100593532]
 position = Vector2(-0.25, 0.5)
 shape = SubResource("RectangleShape2D_lmvgn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2119152445]
+stream = ExtResource("4_lmvgn")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]

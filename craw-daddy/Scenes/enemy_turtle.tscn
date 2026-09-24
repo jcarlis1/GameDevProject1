@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b3qml6djmitx2" path="res://Sprites/Characters/turtle_4.png" id="7_4u5gs"]
 [ext_resource type="Texture2D" uid="uid://d3f4actbgcqs3" path="res://Sprites/Characters/turtle_5.png" id="8_y6okm"]
 [ext_resource type="Texture2D" uid="uid://hlp15qwedf6b" path="res://Sprites/Characters/turtle_6.png" id="9_4h60g"]
+[ext_resource type="AudioStream" uid="uid://ej32dotq0t1d" path="res://Audio/Chomp-chomp.wav" id="10_hk1e5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xtjvt"]
 size = Vector2(41, 50.5)
@@ -30,7 +31,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_25l1h"]
 resource_name = "attack"
-length = 0.19999999999999998
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -83,5 +84,9 @@ shape = SubResource("RectangleShape2D_xtjvt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=777768441]
 libraries/ = SubResource("AnimationLibrary_ntjnm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2006978458]
+stream = ExtResource("10_hk1e5")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
