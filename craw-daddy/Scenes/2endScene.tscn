@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://cgh2pxqunjk50"]
+
+[ext_resource type="Texture2D" uid="uid://durd0gm7a1l5n" path="res://Sprites/Background2.jpeg" id="1_1l48v"]
+[ext_resource type="Texture2D" uid="uid://c00wm0s50indq" path="res://Sprites/dig/frame_001.png" id="2_gk03l"]
+[ext_resource type="Texture2D" uid="uid://bmx2j1wd1qm7s" path="res://Sprites/dig/frame_002.png" id="3_0p6tv"]
+[ext_resource type="Texture2D" uid="uid://c86lxummdumup" path="res://Sprites/dig/frame_003.png" id="4_o3dsp"]
+[ext_resource type="Texture2D" uid="uid://dgw3x5niw0mrx" path="res://Sprites/dig/frame_004.png" id="5_hin2v"]
+[ext_resource type="Texture2D" uid="uid://ckaok0yms33n7" path="res://Sprites/dig/frame_005.png" id="6_f1set"]
+[ext_resource type="Texture2D" uid="uid://bw5vhs78kpfch" path="res://Sprites/dig/frame_006.png" id="7_8l1no"]
+[ext_resource type="Texture2D" uid="uid://ds6qlqnaxq2lf" path="res://Sprites/dig/frame_007.png" id="8_vpi4s"]
+[ext_resource type="Texture2D" uid="uid://b4sywovt8m544" path="res://Sprites/dig/frame_008.png" id="9_bg6n6"]
+[ext_resource type="Texture2D" uid="uid://c7o7v3gnbb8fr" path="res://Sprites/dig/frame_009.png" id="10_j16ie"]
+[ext_resource type="Texture2D" uid="uid://fiaxkwjf07vy" path="res://Sprites/dig/frame_010.png" id="11_n5lyo"]
+[ext_resource type="Texture2D" uid="uid://dmvveruyly0ij" path="res://Sprites/dig/frame_011.png" id="12_cspx3"]
+[ext_resource type="Texture2D" uid="uid://dd8i1nhtc6xxo" path="res://Sprites/dig/frame_012.png" id="13_gbmtx"]
+[ext_resource type="Script" uid="uid://cu6lphkpx6l70" path="res://Scripts/ending_dig.gd" id="14_5ubu8"]
+[ext_resource type="PackedScene" uid="uid://eqbxxqsqpbpd" path="res://Scenes/level_3.tscn" id="15_gk03l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2jbmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gk03l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0p6tv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_o3dsp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hin2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f1set")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8l1no")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vpi4s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bg6n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_j16ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n5lyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cspx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gbmtx")
+}],
+"loop": 0,
+"name": &"dig",
+"speed": 12.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r7c2s"]
+font_size = 38
+
+[sub_resource type="LabelSettings" id="LabelSettings_uo8gb"]
+font_size = 42
+
+[node name="2EndScene" type="Node2D" unique_id=1387702741]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=48685990]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1196599465]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_1l48v")
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1980932809]
+position = Vector2(567, 315)
+sprite_frames = SubResource("SpriteFrames_2jbmv")
+animation = &"dig"
+script = ExtResource("14_5ubu8")
+scene_to_load = ExtResource("15_gk03l")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=727822236]
+offset_left = 203.0
+offset_top = 62.0
+offset_right = 953.0
+offset_bottom = 115.0
+text = "What's a crawfish's favorite board game?"
+label_settings = SubResource("LabelSettings_r7c2s")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=7142112]
+offset_left = 75.0
+offset_top = 516.0
+offset_right = 1103.0
+offset_bottom = 574.0
+text = "\"Chutes and Claws\" - where every move is slippery!"
+label_settings = SubResource("LabelSettings_uo8gb")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="animation_finished" from="CanvasLayer/AnimatedSprite2D" to="CanvasLayer/AnimatedSprite2D" method="_on_animation_finished"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cq4vk74bqvwxe" path="res://Objects/flag.png" id="1_m85dk"]
 [ext_resource type="Script" uid="uid://bdeasditcgboe" path="res://Scripts/end_flag.gd" id="1_xlkuy"]
-[ext_resource type="PackedScene" uid="uid://blxn7cvxp780s" path="res://Scenes/player.tscn" id="2_apwkr"]
+[ext_resource type="PackedScene" uid="uid://3co3rq5pf1rv" path="res://Scenes/3endScene.tscn" id="2_xlkuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_thwiu"]
 size = Vector2(15.666667, 17.333334)
@@ -10,7 +10,7 @@ size = Vector2(15.666667, 17.333334)
 [node name="EndFlag" type="Area2D" unique_id=585533299]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_xlkuy")
-scene_to_load = ExtResource("2_apwkr")
+scene_to_load = ExtResource("2_xlkuy")
 
 [node name="Flag" type="Sprite2D" parent="." unique_id=1481186964]
 texture = ExtResource("1_m85dk")

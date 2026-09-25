@@ -64,9 +64,7 @@ func increase_health(amount : int):
 		health += amount
 	OnUpdateHealth.emit(health)
 
-#func play_sound(sound : AudioStream):
-	#audio.stream = sound
-	#audio.play()
 	
 func game_over():
-	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+	PlayerStats.reset_to_level_start()
+	get_tree().reload_current_scene.call_deferred()

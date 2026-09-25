@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cm71tfrjfc1m0" path="res://Scenes/enemy_net.tscn" id="11_6ioyp"]
 [ext_resource type="PackedScene" uid="uid://d4ao3ms4vshq7" path="res://Scenes/heart.tscn" id="14_oovug"]
 [ext_resource type="PackedScene" uid="uid://d1c8u12uwhix3" path="res://Scenes/end_flag.tscn" id="16_8i23i"]
-[ext_resource type="PackedScene" uid="uid://c2ctwpaegp16q" path="res://Scenes/endingScene.tscn" id="18_pjppf"]
+[ext_resource type="PackedScene" uid="uid://c2ctwpaegp16q" path="res://Scenes/endScene.tscn" id="18_pjppf"]
 [ext_resource type="AudioStream" uid="uid://b1ctf13jxk5m8" path="res://Audio/cajun-music.ogg" id="19_yltlr"]
 
 [node name="Main" type="Node2D" unique_id=297703182]

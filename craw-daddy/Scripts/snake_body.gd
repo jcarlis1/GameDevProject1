@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const speed = 80.0
+const speed = 90.0
 var player: Node2D = null
 var damage : int = 3
 @onready var sprite : Sprite2D = $Sprite

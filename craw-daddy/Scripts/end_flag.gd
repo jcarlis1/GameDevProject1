@@ -15,4 +15,5 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if not body.is_in_group("Player"):
 		return
+	PlayerStats.save_level_checkpoint()
 	get_tree().change_scene_to_packed.call_deferred(scene_to_load)
