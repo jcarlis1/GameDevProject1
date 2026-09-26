@@ -1,7 +1,10 @@
 How to play:
+
+Movement:
+
 	Forward: 	D (d key) or right arrow key
 	Up: 		W (w key) or up arrow key
-  Down: 		S (s key) or down arrow key
+ 	Down: 		S (s key) or down arrow key
 	Back: 		A (a key) or left arrow key
   
 •	There are no jumping or attack actions. 
