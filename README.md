@@ -10,5 +10,3 @@ How to play:
   o	The snake and scoop nets cause 3 damage and death instantly.
   o	The broken bottle, can, toxic plume, turtle, rocks, bottle tops, and lose nets, cause 1 damage (health) per hit.
 •	To beat a level, the player must reach the flag at the end of the level.
-
-<img width="468" height="266" alt="image" src="https://github.com/user-attachments/assets/11ebcd0f-5a76-436f-9982-8ad758ca1c08" />
