@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bkkknjf32hx54"]
+
+[ext_resource type="Script" uid="uid://dvw72ivo5wnq8" path="res://Scripts/drop_bottle_trigger.gd" id="1_slsrf"]
+[ext_resource type="Texture2D" uid="uid://db7kp28pm104m" path="res://Sprites/Characters/bottle.png" id="2_asut6"]
+[ext_resource type="Script" uid="uid://cwq14gj6cxibd" path="res://Scripts/drop_bottle_hitbox.gd" id="3_asut6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyy32"]
+size = Vector2(11, 658)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xtjvt"]
+size = Vector2(25, 49)
+
+[node name="Drop_Bottle" type="Area2D" unique_id=2134667438]
+script = ExtResource("1_slsrf")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=227651337]
+rotation = 1.5707964
+texture = ExtResource("2_asut6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=155217270]
+position = Vector2(-16.5, 319)
+shape = SubResource("RectangleShape2D_qyy32")
+
+[node name="Hitbox" type="Area2D" parent="." unique_id=1913060258]
+script = ExtResource("3_asut6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=285622069]
+position = Vector2(0.5, 3.5)
+shape = SubResource("RectangleShape2D_xtjvt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]

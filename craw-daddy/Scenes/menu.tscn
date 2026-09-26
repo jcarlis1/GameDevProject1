@@ -10,6 +10,12 @@ outline_size = 13
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_158mb"]
+bg_color = Color(0.92513824, 0.4369605, 0.21754849, 0.70980394)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cayip"]
+bg_color = Color(0.9359292, 0.42979488, 0.17607003, 0.6862745)
+
 [node name="Menu" type="Control" unique_id=609383191]
 layout_mode = 3
 anchors_preset = 15
@@ -51,6 +57,9 @@ offset_right = 186.0
 offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_158mb")
 text = "Play"
 
 [node name="QuitButton" type="Button" parent="." unique_id=1646940215]
@@ -60,6 +69,9 @@ offset_left = 856.0
 offset_top = 319.0
 offset_right = 969.0
 offset_bottom = 406.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_cayip")
 text = "Quit"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]

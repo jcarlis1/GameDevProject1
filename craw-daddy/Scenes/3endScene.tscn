@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://3co3rq5pf1rv"]
 
 [ext_resource type="Texture2D" uid="uid://durd0gm7a1l5n" path="res://Sprites/Background2.jpeg" id="1_ri6rg"]
-[ext_resource type="Texture2D" uid="uid://c00wm0s50indq" path="res://Sprites/dig/frame_001.png" id="2_pdu4a"]
-[ext_resource type="Texture2D" uid="uid://bmx2j1wd1qm7s" path="res://Sprites/dig/frame_002.png" id="3_1gvjg"]
-[ext_resource type="Texture2D" uid="uid://c86lxummdumup" path="res://Sprites/dig/frame_003.png" id="4_04op3"]
-[ext_resource type="Texture2D" uid="uid://dgw3x5niw0mrx" path="res://Sprites/dig/frame_004.png" id="5_0rjsi"]
-[ext_resource type="Texture2D" uid="uid://ckaok0yms33n7" path="res://Sprites/dig/frame_005.png" id="6_yy3eu"]
-[ext_resource type="Texture2D" uid="uid://bw5vhs78kpfch" path="res://Sprites/dig/frame_006.png" id="7_xunw5"]
-[ext_resource type="Texture2D" uid="uid://ds6qlqnaxq2lf" path="res://Sprites/dig/frame_007.png" id="8_j1iew"]
-[ext_resource type="Texture2D" uid="uid://b4sywovt8m544" path="res://Sprites/dig/frame_008.png" id="9_sgx46"]
-[ext_resource type="Texture2D" uid="uid://c7o7v3gnbb8fr" path="res://Sprites/dig/frame_009.png" id="10_kyx1j"]
-[ext_resource type="Texture2D" uid="uid://fiaxkwjf07vy" path="res://Sprites/dig/frame_010.png" id="11_13o7r"]
-[ext_resource type="Texture2D" uid="uid://dmvveruyly0ij" path="res://Sprites/dig/frame_011.png" id="12_74h46"]
-[ext_resource type="Texture2D" uid="uid://dd8i1nhtc6xxo" path="res://Sprites/dig/frame_012.png" id="13_x3s6t"]
-[ext_resource type="Script" uid="uid://cu6lphkpx6l70" path="res://Scripts/ending_dig.gd" id="14_bau2l"]
+[ext_resource type="Texture2D" uid="uid://itvk7hrd8mpg" path="res://Sprites/Kids/kids_001.png" id="2_pdu4a"]
+[ext_resource type="Texture2D" uid="uid://mhjjow5mecgv" path="res://Sprites/Kids/kids_002.png" id="3_1gvjg"]
+[ext_resource type="Texture2D" uid="uid://dwsco5uurd33x" path="res://Sprites/Kids/kids_003.png" id="4_04op3"]
+[ext_resource type="Texture2D" uid="uid://vrcaw2xl6ftg" path="res://Sprites/Kids/kids_004.png" id="5_0rjsi"]
+[ext_resource type="Texture2D" uid="uid://cvkiyw6sgdur5" path="res://Sprites/Kids/kids_005.png" id="6_yy3eu"]
+[ext_resource type="Texture2D" uid="uid://h8yxipejm0rg" path="res://Sprites/Kids/kids_006.png" id="7_xunw5"]
+[ext_resource type="Texture2D" uid="uid://ceugdv3g8fvyq" path="res://Sprites/Kids/kids_007.png" id="8_j1iew"]
+[ext_resource type="Texture2D" uid="uid://c4wm5ov45hlxt" path="res://Sprites/Kids/kids_008.png" id="9_sgx46"]
+[ext_resource type="Texture2D" uid="uid://cnms0hh7fiwda" path="res://Sprites/Kids/kids_009.png" id="10_kyx1j"]
+[ext_resource type="Texture2D" uid="uid://bc37c15i1g0n5" path="res://Sprites/Kids/kids_010.png" id="11_13o7r"]
+[ext_resource type="Texture2D" uid="uid://vmr1to0uc0mi" path="res://Sprites/Kids/kids_011.png" id="12_74h46"]
+[ext_resource type="Texture2D" uid="uid://bvr052hynlot0" path="res://Sprites/Kids/kids_012.png" id="13_x3s6t"]
+[ext_resource type="Script" uid="uid://djo80vwccckpu" path="res://Scripts/final_end.gd" id="14_pdu4a"]
 [ext_resource type="PackedScene" uid="uid://dns14h5mmxrk0" path="res://Scenes/menu.tscn" id="15_pdu4a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2jbmv"]
@@ -56,8 +56,8 @@ animations = [{
 "texture": ExtResource("13_x3s6t")
 }],
 "loop": 0,
-"name": &"dig",
-"speed": 12.0
+"name": &"Kids",
+"speed": 10.0
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r7c2s"]
@@ -66,7 +66,7 @@ font_size = 38
 [sub_resource type="LabelSettings" id="LabelSettings_uo8gb"]
 font_size = 42
 
-[node name="2EndScene" type="Node2D" unique_id=1387702741]
+[node name="3EndScene" type="Node2D" unique_id=1387702741]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=48685990]
 
@@ -82,8 +82,10 @@ metadata/_edit_use_anchors_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer" unique_id=1980932809]
 position = Vector2(567, 315)
 sprite_frames = SubResource("SpriteFrames_2jbmv")
-animation = &"dig"
-script = ExtResource("14_bau2l")
+animation = &"Kids"
+frame = 11
+frame_progress = 1.0
+script = ExtResource("14_pdu4a")
 scene_to_load = ExtResource("15_pdu4a")
 
 [node name="Label" type="Label" parent="CanvasLayer" unique_id=727822236]
@@ -97,12 +99,11 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="CanvasLayer" unique_id=7142112]
 anchors_preset = -1
-anchor_right = -0.4722222
-offset_left = 319.0
-offset_top = 514.0
-offset_right = 1347.0
-offset_bottom = 572.0
-text = "It was being Shellfish!"
+offset_left = 413.0
+offset_top = 524.0
+offset_right = 726.0
+offset_bottom = 582.0
+text = "It was Shellfish!"
 label_settings = SubResource("LabelSettings_uo8gb")
 metadata/_edit_use_anchors_ = true
 

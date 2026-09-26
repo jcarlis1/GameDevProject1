@@ -114,41 +114,71 @@ position = Vector2(4019, -365)
 [node name="Tadpole" parent="Collectables" unique_id=1344344256 instance=ExtResource("13_5s1wx")]
 position = Vector2(47, 104)
 
+[node name="Tadpole6" parent="Collectables" unique_id=1660628150 instance=ExtResource("13_5s1wx")]
+position = Vector2(202, -115)
+
 [node name="Tadpole2" parent="Collectables" unique_id=540028826 instance=ExtResource("13_5s1wx")]
 position = Vector2(597, -38)
 
+[node name="Tadpole7" parent="Collectables" unique_id=1718060702 instance=ExtResource("13_5s1wx")]
+position = Vector2(1096, -49)
+
 [node name="Tadpole3" parent="Collectables" unique_id=952618670 instance=ExtResource("13_5s1wx")]
-position = Vector2(1288, 29)
+position = Vector2(1420, 126)
 
 [node name="Tadpole4" parent="Collectables" unique_id=1790168433 instance=ExtResource("13_5s1wx")]
 position = Vector2(2709, -120)
+
+[node name="Tadpole9" parent="Collectables" unique_id=116243068 instance=ExtResource("13_5s1wx")]
+position = Vector2(3255, 139)
+
+[node name="Tadpole8" parent="Collectables" unique_id=1221390465 instance=ExtResource("13_5s1wx")]
+position = Vector2(2131, 25)
 
 [node name="Tadpole5" parent="Collectables" unique_id=995525888 instance=ExtResource("13_5s1wx")]
 position = Vector2(3638, 74)
 
 [node name="Plant" parent="Collectables" unique_id=641948559 instance=ExtResource("14_27s1b")]
-position = Vector2(259, -109)
+position = Vector2(119, -19)
+
+[node name="Plant7" parent="Collectables" unique_id=1824194930 instance=ExtResource("14_27s1b")]
+position = Vector2(380, -122)
 
 [node name="Plant2" parent="Collectables" unique_id=1891855004 instance=ExtResource("14_27s1b")]
 position = Vector2(961, 78)
 
+[node name="Plant8" parent="Collectables" unique_id=870741712 instance=ExtResource("14_27s1b")]
+position = Vector2(689, 97)
+
 [node name="Plant6" parent="Collectables" unique_id=1358058634 instance=ExtResource("14_27s1b")]
 position = Vector2(1541, -17)
+
+[node name="Plant9" parent="Collectables" unique_id=432437468 instance=ExtResource("14_27s1b")]
+position = Vector2(1301, 9)
 
 [node name="Plant3" parent="Collectables" unique_id=1586324141 instance=ExtResource("14_27s1b")]
 position = Vector2(1876, -69)
 
+[node name="Plant10" parent="Collectables" unique_id=969217504 instance=ExtResource("14_27s1b")]
+position = Vector2(2557, -55)
+
 [node name="Plant4" parent="Collectables" unique_id=292746903 instance=ExtResource("14_27s1b")]
 position = Vector2(3064, -55)
+
+[node name="Plant12" parent="Collectables" unique_id=1123331160 instance=ExtResource("14_27s1b")]
+position = Vector2(3505, -140)
+
+[node name="Plant11" parent="Collectables" unique_id=1703230594 instance=ExtResource("14_27s1b")]
+position = Vector2(2887, 53)
 
 [node name="Plant5" parent="Collectables" unique_id=26690508 instance=ExtResource("14_27s1b")]
 position = Vector2(3941, -123)
 
 [node name="Heart" parent="Collectables" unique_id=1286127142 instance=ExtResource("15_vib74")]
-position = Vector2(428, -118)
+position = Vector2(538, -81)
 
 [node name="Heart2" parent="Collectables" unique_id=646343435 instance=ExtResource("15_vib74")]
-position = Vector2(756, 124)
+position = Vector2(846, 116)
 
 [node name="Heart3" parent="Collectables" unique_id=2124871073 instance=ExtResource("15_vib74")]
 position = Vector2(2289, 130)

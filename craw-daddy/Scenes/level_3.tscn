@@ -13,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://cqwrm5rix2idw" path="res://Scenes/enemy_toxic.tscn" id="11_rybab"]
 [ext_resource type="PackedScene" uid="uid://cm71tfrjfc1m0" path="res://Scenes/enemy_net.tscn" id="12_g6bfm"]
 [ext_resource type="PackedScene" uid="uid://ce18e8mmg6jty" path="res://Scenes/tadpole.tscn" id="13_ds67j"]
+[ext_resource type="PackedScene" uid="uid://bkkknjf32hx54" path="res://Scenes/drop_bottle.tscn" id="13_kgmqw"]
 [ext_resource type="PackedScene" uid="uid://b7jlxxswgxjso" path="res://Scenes/plant.tscn" id="14_tt48c"]
 [ext_resource type="PackedScene" uid="uid://d4ao3ms4vshq7" path="res://Scenes/heart.tscn" id="15_3sjjq"]
 [ext_resource type="Script" uid="uid://c0r4xshe0q5j8" path="res://Scripts/spawner.gd" id="16_mtnpm"]
 [ext_resource type="PackedScene" uid="uid://d1c8u12uwhix3" path="res://Scenes/end_flag.tscn" id="17_f8et3"]
-[ext_resource type="PackedScene" uid="uid://3co3rq5pf1rv" path="res://Scenes/3endScene.tscn" id="18_kgmqw"]
 [ext_resource type="AudioStream" uid="uid://dod72lja7fcks" path="res://Audio/mais_yeah.ogg" id="19_kgmqw"]
 
 [node name="Main" type="Node2D" unique_id=297703182]
@@ -43,7 +43,8 @@ scale = Vector2(1, 0.80533856)
 texture = ExtResource("1_kgmqw")
 
 [node name="Current" parent="." unique_id=489527031 instance=ExtResource("2_s80er")]
-position = Vector2(562, -20.000008)
+position = Vector2(530.7501, -20.000008)
+scale = Vector2(1.5550427, 0.46321622)
 
 [node name="Current2" parent="." unique_id=199815710 instance=ExtResource("2_s80er")]
 position = Vector2(2690.7502, -144.00002)
@@ -108,27 +109,54 @@ rotation = 3.1415927
 position = Vector2(1161, -352)
 
 [node name="Enemy_Net2" parent="Enemys" unique_id=868563660 instance=ExtResource("12_g6bfm")]
-position = Vector2(2969, -356)
+position = Vector2(3050, -351)
+
+[node name="Drop_Bottle" parent="Enemys" unique_id=2134667438 instance=ExtResource("13_kgmqw")]
+position = Vector2(943, -333)
+
+[node name="Drop_Bottle2" parent="Enemys" unique_id=1480779637 instance=ExtResource("13_kgmqw")]
+position = Vector2(2924, -323)
 
 [node name="Collectables" type="Node" parent="." unique_id=2029126564]
 
 [node name="Tadpole" parent="Collectables" unique_id=1344344256 instance=ExtResource("13_ds67j")]
-position = Vector2(-196, 58)
+position = Vector2(-218, 108)
+
+[node name="Tadpole6" parent="Collectables" unique_id=42046989 instance=ExtResource("13_ds67j")]
+position = Vector2(109, -71)
 
 [node name="Tadpole2" parent="Collectables" unique_id=540028826 instance=ExtResource("13_ds67j")]
-position = Vector2(311, -113)
+position = Vector2(387, -135)
 
 [node name="Tadpole3" parent="Collectables" unique_id=952618670 instance=ExtResource("13_ds67j")]
 position = Vector2(1046, -184)
 
+[node name="Tadpole8" parent="Collectables" unique_id=1746488050 instance=ExtResource("13_ds67j")]
+position = Vector2(1783, 107)
+
+[node name="Tadpole7" parent="Collectables" unique_id=1388854001 instance=ExtResource("13_ds67j")]
+position = Vector2(785, 94)
+
 [node name="Tadpole4" parent="Collectables" unique_id=1790168433 instance=ExtResource("13_ds67j")]
 position = Vector2(2865, -126)
+
+[node name="Tadpole10" parent="Collectables" unique_id=1521697833 instance=ExtResource("13_ds67j")]
+position = Vector2(3163, -8)
+
+[node name="Tadpole9" parent="Collectables" unique_id=2137737856 instance=ExtResource("13_ds67j")]
+position = Vector2(2470, 135)
 
 [node name="Tadpole5" parent="Collectables" unique_id=995525888 instance=ExtResource("13_ds67j")]
 position = Vector2(3636, 10)
 
 [node name="Plant" parent="Collectables" unique_id=641948559 instance=ExtResource("14_tt48c")]
-position = Vector2(89, -32)
+position = Vector2(54, 110)
+
+[node name="Plant7" parent="Collectables" unique_id=5790032 instance=ExtResource("14_tt48c")]
+position = Vector2(275, -79)
+
+[node name="Plant8" parent="Collectables" unique_id=124725682 instance=ExtResource("14_tt48c")]
+position = Vector2(485, 31)
 
 [node name="Plant2" parent="Collectables" unique_id=1891855004 instance=ExtResource("14_tt48c")]
 position = Vector2(904, -117)
@@ -136,8 +164,17 @@ position = Vector2(904, -117)
 [node name="Plant6" parent="Collectables" unique_id=1358058634 instance=ExtResource("14_tt48c")]
 position = Vector2(1240, -42)
 
+[node name="Plant9" parent="Collectables" unique_id=462219943 instance=ExtResource("14_tt48c")]
+position = Vector2(1550, -94)
+
 [node name="Plant3" parent="Collectables" unique_id=1586324141 instance=ExtResource("14_tt48c")]
 position = Vector2(2018, -55)
+
+[node name="Plant11" parent="Collectables" unique_id=64081124 instance=ExtResource("14_tt48c")]
+position = Vector2(2680, 53)
+
+[node name="Plant10" parent="Collectables" unique_id=1127344925 instance=ExtResource("14_tt48c")]
+position = Vector2(2045, 149)
 
 [node name="Plant4" parent="Collectables" unique_id=292746903 instance=ExtResource("14_tt48c")]
 position = Vector2(3015, -131)
@@ -146,7 +183,7 @@ position = Vector2(3015, -131)
 position = Vector2(3879, -139)
 
 [node name="Heart" parent="Collectables" unique_id=1286127142 instance=ExtResource("15_3sjjq")]
-position = Vector2(556, 74)
+position = Vector2(587, 147)
 
 [node name="Heart2" parent="Collectables" unique_id=646343435 instance=ExtResource("15_3sjjq")]
 position = Vector2(1336, 34)
@@ -168,7 +205,6 @@ autostart = true
 
 [node name="EndFlag" parent="." unique_id=585533299 instance=ExtResource("17_f8et3")]
 position = Vector2(4353, 18)
-scene_to_load = ExtResource("18_kgmqw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=339609374]
 stream = ExtResource("19_kgmqw")
