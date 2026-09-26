@@ -166,7 +166,7 @@ position = Vector2(2557, -55)
 position = Vector2(3064, -55)
 
 [node name="Plant12" parent="Collectables" unique_id=1123331160 instance=ExtResource("14_27s1b")]
-position = Vector2(3505, -140)
+position = Vector2(3526, -109)
 
 [node name="Plant11" parent="Collectables" unique_id=1703230594 instance=ExtResource("14_27s1b")]
 position = Vector2(2887, 53)

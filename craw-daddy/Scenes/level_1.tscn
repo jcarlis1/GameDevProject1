@@ -116,6 +116,9 @@ position = Vector2(267, -11)
 [node name="Tadpole2" parent="Collectables" unique_id=540028826 instance=ExtResource("6_xrdnt")]
 position = Vector2(629, -11)
 
+[node name="Tadpole9" parent="Collectables" unique_id=1198684627 instance=ExtResource("6_xrdnt")]
+position = Vector2(444, -124)
+
 [node name="Tadpole3" parent="Collectables" unique_id=952618670 instance=ExtResource("6_xrdnt")]
 position = Vector2(1353, 110)
 
@@ -162,7 +165,7 @@ position = Vector2(4065, 16)
 position = Vector2(3764, 99)
 
 [node name="Heart" parent="Collectables" unique_id=1286127142 instance=ExtResource("14_oovug")]
-position = Vector2(423, -109)
+position = Vector2(531, -41)
 
 [node name="Heart2" parent="Collectables" unique_id=646343435 instance=ExtResource("14_oovug")]
 position = Vector2(847, -48)
